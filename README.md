@@ -1,6 +1,6 @@
-# PowerPlatform Custom Connector for Harvest API
+# Harvest API PowerPlatform Custom Connector
 
-A Custom Connector that securely connects to Harvest API using OAuth authentication.
+A PowerPlatform Custom Connector that securely connects to Harvest API using OAuth authentication.
 
 ## Actions
 
