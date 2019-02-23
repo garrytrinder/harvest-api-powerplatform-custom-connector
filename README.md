@@ -1,7 +1,15 @@
-# PowerPlatform Custom Connector for the Harvest API
+# PowerPlatform Custom Connector for Harvest API
 
-![Flow](/HarvestAPIPowerPlatformCustomConnector.png)
+A Custom Connector that securely connects to Harvest API using OAuth authentication.
+
+## Actions
+
+- List time entries
 
 ## Installation
 
 <TODO>
+
+## Flow Usage
+
+![Flow](/HarvestAPIPowerPlatformCustomConnector.png)
