@@ -1,0 +1,92 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Harvest API",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "api.harvestapp.com",
+  "basePath": "/v2",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/projects": {},
+    "/projects/{PROJECT_ID}": {},
+    "/time_entries": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "List time entries",
+        "operationId": "GetTimeEntries",
+        "description": "Returns a list of your time entries",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Specify a date to return time entries spent on or after a given date (YYYY-MM-DD)",
+            "x-ms-summary": "From",
+            "format": "date"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-ms-summary": "Page",
+            "description": "Specify the page number to use in pagination"
+          },
+          {
+            "name": "Harvest-Account-Id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "x-ms-visibility": "important",
+            "x-ms-summary": "Account Id",
+            "description": "Specify your Harvest Account Id"
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "Harvest API Custom Connector",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://id.getharvest.com/oauth2/authorize",
+      "tokenUrl": "https://id.getharvest.com/api/v2/oauth2/token",
+      "scopes": {
+        "all": "all"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "all"
+      ]
+    }
+  ],
+  "tags": []
+}
