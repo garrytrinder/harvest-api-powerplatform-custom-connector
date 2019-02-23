@@ -13,8 +13,6 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/projects": {},
-    "/projects/{PROJECT_ID}": {},
     "/time_entries": {
       "get": {
         "responses": {
@@ -60,7 +58,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "default": "Harvest API Custom Connector",
+            "default": "Harvest API PowerPlatform Custom Connector",
             "x-ms-visibility": "internal"
           }
         ]
