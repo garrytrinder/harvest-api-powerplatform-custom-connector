@@ -8,7 +8,7 @@ A Custom Connector that securely connects to Harvest API using OAuth authenticat
 
 ## Installation
 
-<TODO>
+TODO
 
 ## Flow Usage
 
