@@ -28,7 +28,8 @@
         "description": "Returns a list of your time entries",
         "x-ms-pageable": {
           "nextLinkName": "next",
-          "value": "time_entries"
+          "itemName": "time_entries",
+          "operationnName": "GetTimeEntriesNext"
         },
         "parameters": [{
             "name": "from",
