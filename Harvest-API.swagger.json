@@ -27,7 +27,7 @@
         "operationId": "GetTimeEntries",
         "description": "Returns a list of your time entries",
         "x-ms-pageable": {
-          "itemName": "time_entries",
+          "value": "time_entries",
           "nextLinkName": "next"
         },
         "parameters": [{
