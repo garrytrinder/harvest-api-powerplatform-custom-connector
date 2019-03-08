@@ -251,7 +251,6 @@
       "flow": "accessCode",
       "authorizationUrl": "https://id.getharvest.com/oauth2/authorize",
       "tokenUrl": "https://id.getharvest.com/api/v2/oauth2/token",
-      "refreshUrl": "https://id.getharvest.com/api/v2/oauth2/token",
       "scopes": {
         "all": "all"
       }
