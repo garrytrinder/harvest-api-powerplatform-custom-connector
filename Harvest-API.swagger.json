@@ -45,6 +45,12 @@
                     "first": {
                       "type": "string"
                     },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {
+                      "type": "string"
+                    },
                     "last": {
                       "type": "string"
                     }
@@ -58,6 +64,10 @@
         "summary": "List time entries",
         "operationId": "GetTimeEntries",
         "description": "Returns a list of your time entries",
+        "x-ms-pageable": {
+          "itemName": "time_entries",
+          "nextLinkName": "next"
+        },
         "parameters": [{
             "name": "from",
             "in": "query",
