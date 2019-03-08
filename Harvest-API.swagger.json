@@ -19,7 +19,7 @@
           "default": {
             "description": "default",
             "schema": {
-              "type": "array",
+              "type": "object",
               "properties": {
                 "time_entries": {
                   "type": "array",
