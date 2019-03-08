@@ -19,15 +19,46 @@
           "default": {
             "description": "default",
             "schema": {
-              "type": "string"
+              "type": "array",
+              "properties": {
+                "time_entries": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/definitions/TimeEntry"
+                  }
+                },
+                "per_page": {
+                  "type": "number"
+                },
+                "total_pages": {
+                  "type": "number"
+                },
+                "total_entries": {
+                  "type": "number"
+                },
+                "page": {
+                  "type": "number"
+                },
+                "links": {
+                  "properties": {
+                    "first": {
+                      "type": "string"
+                    },
+                    "last": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
             }
           }
         },
         "summary": "List time entries",
         "operationId": "GetTimeEntries",
         "description": "Returns a list of your time entries",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "from",
             "in": "query",
             "required": false,
@@ -65,7 +96,153 @@
       }
     }
   },
-  "definitions": {},
+  "definitions": {
+    "TimeEntry": {
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "spent_date": {
+          "type": "string"
+        },
+        "user": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "client": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "project": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "task": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "user_assignment": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "is_project_manager": {
+              "type": "boolean"
+            },
+            "is_active": {
+              "type": "boolean"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "hourly_rate": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "task_assignment": {
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "billable": {
+              "type": "boolean"
+            },
+            "is_active": {
+              "type": "boolean"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "hourly_rate": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "hours": {
+          "type": "number"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "is_locked": {
+          "type": "boolean"
+        },
+        "locked_reason": {
+          "type": "string"
+        },
+        "is_closed": {
+          "type": "boolean"
+        },
+        "is_billed": {
+          "type": "boolean"
+        },
+        "started_time": {
+          "type": "string"
+        },
+        "ended_time": {
+          "type": "string"
+        },
+        "is_running": {
+          "type": "boolean"
+        },
+        "billable": {
+          "type": "boolean"
+        },
+        "budgeted": {
+          "type": "boolean"
+        },
+        "billable_rate": {
+          "type": "number"
+        },
+        "cost_rate": {
+          "type": "number"
+        }
+      }
+    }
+  },
   "parameters": {},
   "responses": {},
   "securityDefinitions": {
@@ -74,17 +251,16 @@
       "flow": "accessCode",
       "authorizationUrl": "https://id.getharvest.com/oauth2/authorize",
       "tokenUrl": "https://id.getharvest.com/api/v2/oauth2/token",
+      "refreshUrl": "https://id.getharvest.com/api/v2/oauth2/token",
       "scopes": {
         "all": "all"
       }
     }
   },
-  "security": [
-    {
-      "oauth2_auth": [
-        "all"
-      ]
-    }
-  ],
+  "security": [{
+    "oauth2_auth": [
+      "all"
+    ]
+  }],
   "tags": []
 }
