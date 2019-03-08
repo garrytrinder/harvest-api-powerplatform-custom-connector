@@ -19,45 +19,7 @@
           "default": {
             "description": "default",
             "schema": {
-              "type": "object",
-              "properties": {
-                "time_entries": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/TimeEntry"
-                  }
-                },
-                "per_page": {
-                  "type": "number"
-                },
-                "total_pages": {
-                  "type": "number"
-                },
-                "total_entries": {
-                  "type": "number"
-                },
-                "page": {
-                  "type": "number"
-                },
-                "links": {
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "next": {
-                      "type": "string"
-                    },
-                    "previous": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
+              "$ref": "#/definitions/TimeEntriesResult"
             }
           }
         },
@@ -65,7 +27,7 @@
         "operationId": "GetTimeEntries",
         "description": "Returns a list of your time entries",
         "x-ms-pageable": {
-          "value": "time_entries",
+          "itemName": "time_entries",
           "nextLinkName": "next"
         },
         "parameters": [{
@@ -107,6 +69,47 @@
     }
   },
   "definitions": {
+    "TimeEntriesResult": {
+      "type": "object",
+      "properties": {
+        "time_entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/TimeEntry"
+          }
+        },
+        "per_page": {
+          "type": "number"
+        },
+        "total_pages": {
+          "type": "number"
+        },
+        "total_entries": {
+          "type": "number"
+        },
+        "page": {
+          "type": "number"
+        },
+        "links": {
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "next": {
+              "type": "string"
+            },
+            "previous": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      }
+    },
     "TimeEntry": {
       "type": "object",
       "properties": {
