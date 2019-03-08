@@ -97,6 +97,7 @@
   },
   "definitions": {
     "TimeEntry": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "number"
