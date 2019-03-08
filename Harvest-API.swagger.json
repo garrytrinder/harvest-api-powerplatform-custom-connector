@@ -24,6 +24,7 @@
                 "time_entries": {
                   "type": "array",
                   "items": {
+                    "type": "object",
                     "$ref": "#/definitions/TimeEntry"
                   }
                 },
