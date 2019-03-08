@@ -29,7 +29,7 @@
         "x-ms-pageable": {
           "nextLinkName": "next",
           "itemName": "time_entries",
-          "operationnName": "GetTimeEntriesNext"
+          "operationName": "GetTimeEntriesNext"
         },
         "parameters": [{
             "name": "from",
