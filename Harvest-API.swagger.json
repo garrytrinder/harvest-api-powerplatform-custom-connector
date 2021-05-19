@@ -19,7 +19,7 @@
           "default": {
             "description": "default",
             "schema": {
-              "type": "string"
+              "type": "object"
             }
           }
         },
