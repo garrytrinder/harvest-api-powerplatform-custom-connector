@@ -45,6 +45,14 @@
             "description": "Specify the page number to use in pagination"
           },
           {
+            "name": "user_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-ms-summary": "User Id",
+            "description": "User ID filter"
+          },
+          {
             "name": "Harvest-Account-Id",
             "in": "header",
             "required": true,
